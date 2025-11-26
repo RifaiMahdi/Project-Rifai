@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBS - Club Badminton School</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #ffffff;
+            color: #003366;
+        }
+
+        header {
+            background: #bfe4ff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            color: #0059b3;
+            text-align: center;
+        }
+
+        /* garis dekorasi */
+        h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #66b8ff;
+            margin: 8px auto 0;
+            border-radius: 5px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        /* BOX */
+        .box {
+            background: #e6f3ff;
+            padding: 25px;
+            border-radius: 14px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.25s ease;
+        }
+
+        /* GRADASI BARU — warna biru pastel lebih halus & lembut */
+        .box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 200px;
+            height: 200px;
+
+            background: radial-gradient(
+                circle at top left,
+                rgba(140, 190, 255, 0.40) 0%,   /* biru pastel lembut */
+                rgba(140, 190, 255, 0.22) 35%,
+                rgba(140, 190, 255, 0.10) 60%,
+                transparent 100%
+            );
+
+            pointer-events: none;
+            border-top-left-radius: 14px;
+        }
+
+        .box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CBS - Club Badminton School</h1>
+    </header>
+
+    <section>
+
+        <div class="box">
+            <h2>Apa itu CBS?</h2>
+            <p>
+                CBS (Club Badminton School) adalah ekstrakurikuler yang berfokus pada pengembangan kemampuan bermain bulu tangkis bagi para siswa. 
+                Program ini dirancang untuk memberikan pelatihan yang terstruktur dan menyenangkan bagi pemula maupun yang sudah berpengalaman. 
+                Dalam kegiatan CBS, siswa belajar teknik dasar, strategi permainan, dan peningkatan kekuatan fisik. 
+                Seluruh kegiatan berlangsung dalam suasana positif yang mendukung perkembangan siswa.
+            </p>
+            <p>
+                Selain itu, CBS juga menjadi wadah bagi siswa untuk melatih kedisiplinan dan sportivitas dalam berolahraga. 
+                Para peserta mendapatkan kesempatan mengikuti berbagai kompetisi internal maupun eksternal. 
+                Latihan dilakukan secara rutin untuk memastikan perkembangan kemampuan yang konsisten. 
+                Dengan bergabung di CBS, siswa memperoleh pengalaman berharga dalam dunia bulu tangkis.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Visi</h2>
+            <p>
+                Visi CBS adalah menciptakan generasi muda yang unggul dalam olahraga bulu tangkis melalui program pelatihan yang berkualitas. 
+                Kami berupaya membentuk karakter yang percaya diri, disiplin, dan mampu bersaing secara sehat. 
+                Selain fokus pada teknik bermain, CBS juga menanamkan nilai kebersamaan dan sportivitas. 
+                Dengan demikian, siswa dapat berkembang menjadi atlet sekaligus pribadi yang berintegritas.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Misi</h2>
+            <p>
+                Misi CBS adalah menyediakan pelatihan bulu tangkis yang efektif dan menyenangkan bagi seluruh siswa. 
+                Kami menciptakan lingkungan yang mendukung perkembangan fisik, mental, dan kerja sama antar anggota. 
+                Program latihan dirancang untuk meningkatkan teknik, stamina, dan pemahaman strategi permainan. 
+                Selain itu, kami memberikan kesempatan kompetisi agar siswa dapat mengasah pengalaman dan rasa percaya diri.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
