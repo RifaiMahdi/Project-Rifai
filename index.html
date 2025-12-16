@@ -1,136 +1,288 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBS - Club Badminton School</title>
+    <title>CBS - Club Badminton School</title><style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #ffffff;
+        color: #003366;
+    }
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #ffffff;
-            color: #003366;
-        }
+    header {
+        background: #bfe4ff;
+        padding: 20px;
+        text-align: center;
+    }
 
-        header {
-            background: #bfe4ff;
-            padding: 20px;
-            text-align: center;
-        }
+    section {
+        padding: 30px;
+        max-width: 900px;
+        margin: auto;
+    }
 
-        section {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
-        }
+    h1, h2 {
+        color: #0059b3;
+        text-align: center;
+    }
 
-        h1, h2 {
-            color: #0059b3;
-            text-align: center;
-        }
+    /* garis dekorasi */
+    h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #66b8ff;
+        margin: 8px auto 0;
+        border-radius: 5px;
+    }
 
-        /* garis dekorasi */
-        h2::after {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: #66b8ff;
-            margin: 8px auto 0;
-            border-radius: 5px;
-        }
+    p {
+        line-height: 1.7;
+    }
 
-        p {
-            line-height: 1.7;
-        }
+    /* BOX */
+    .box {
+        background: #e6f3ff;
+        padding: 25px;
+        border-radius: 14px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        transition: 0.25s ease;
+    }
 
-        /* BOX */
-        .box {
-            background: #e6f3ff;
-            padding: 25px;
-            border-radius: 14px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: 0.25s ease;
-        }
+    .box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+            circle at top left,
+            rgba(140, 190, 255, 0.40) 0%,
+            rgba(140, 190, 255, 0.22) 35%,
+            rgba(140, 190, 255, 0.10) 60%,
+            transparent 100%
+        );
+        pointer-events: none;
+        border-top-left-radius: 14px;
+    }
 
-        /* GRADASI BARU — warna biru pastel lebih halus & lembut */
-        .box::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
+    .box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
 
-            width: 200px;
-            height: 200px;
+    /* DOKUMENTASI */
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 25px;
+    }
 
-            background: radial-gradient(
-                circle at top left,
-                rgba(140, 190, 255, 0.40) 0%,   /* biru pastel lembut */
-                rgba(140, 190, 255, 0.22) 35%,
-                rgba(140, 190, 255, 0.10) 60%,
-                transparent 100%
-            );
+    .gallery img {
+        width: 100%;
+        max-height: 420px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        transition: 0.3s ease;
+    }
 
-            pointer-events: none;
-            border-top-left-radius: 14px;
-        }
+    .gallery img:hover {
+        transform: scale(1.01);
+    }
 
-        .box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        }
-    </style>
-</head>
+    /* BADGE */
+    .badge {
+        display: inline-block;
+        background: #66b8ff;
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        margin: 6px 6px 0 0;
+    }
 
-<body>
+    /* STATS */
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
 
-    <header>
-        <h1>CBS - Club Badminton School</h1>
-    </header>
+    .stat-box {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 18px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
 
-    <section>
+    .stat-box h3 {
+        margin: 0;
+        font-size: 26px;
+        color: #0059b3;
+    }
 
-        <div class="box">
-            <h2>Apa itu CBS?</h2>
-            <p>
-                CBS (Club Badminton School) adalah ekstrakurikuler yang berfokus pada pengembangan kemampuan bermain bulu tangkis bagi para siswa. 
-                Program ini dirancang untuk memberikan pelatihan yang terstruktur dan menyenangkan bagi pemula maupun yang sudah berpengalaman. 
-                Dalam kegiatan CBS, siswa belajar teknik dasar, strategi permainan, dan peningkatan kekuatan fisik. 
-                Seluruh kegiatan berlangsung dalam suasana positif yang mendukung perkembangan siswa.
+    .stat-box span {
+        font-size: 14px;
+        color: #336699;
+    }
+
+    /* TIMELINE */
+    .timeline {
+        margin-top: 20px;
+    }
+
+    .timeline-item {
+        background: #ffffff;
+        border-left: 4px solid #66b8ff;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    /* ORGANISASI */
+    .org-chart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .org-level {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .org-box {
+        background: linear-gradient(135deg, #004a99, #66b8ff);
+        color: #ffffff;
+        padding: 20px 24px;
+        border-radius: 16px;
+        min-width: 220px;
+        text-align: center;
+        box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+    }
+
+    .org-box h4 {
+        margin: 0;
+        font-size: 17px;
+        font-weight: bold;
+        letter-spacing: 0.6px;
+    }
+
+    .org-box span {
+        font-size: 14px;
+        opacity: 0.95;
+    }
+
+    .org-line {
+        width: 4px;
+        height: 28px;
+        background: #66b8ff;
+        border-radius: 4px;
+    }
+</style>
+
+</head><body><header>
+    <h1>CBS - Club Badminton School</h1>
+</header>
+
+<section>
+
+    <div class="box">
+        <h2>Apa itu CBS?</h2>
+        <div style="text-align:center;">
+            <span class="badge">Ekstrakurikuler</span>
+            <span class="badge">Olahraga</span>
+            <span class="badge">Badminton</span>
+        
+    </div>
+
+<p>
+                CBS (Club Badminton School) adalah ekstrakurikuler yang berfokus pada pengembangan kemampuan bermain bulu tangkis bagi para siswa.
+                Kegiatan ini ditujukan untuk menyalurkan minat dan bakat siswa dalam bidang olahraga, khususnya badminton.
+                Latihan dilaksanakan secara rutin dengan suasana yang menyenangkan dan disiplin.
             </p>
             <p>
-                Selain itu, CBS juga menjadi wadah bagi siswa untuk melatih kedisiplinan dan sportivitas dalam berolahraga. 
-                Para peserta mendapatkan kesempatan mengikuti berbagai kompetisi internal maupun eksternal. 
-                Latihan dilakukan secara rutin untuk memastikan perkembangan kemampuan yang konsisten. 
-                Dengan bergabung di CBS, siswa memperoleh pengalaman berharga dalam dunia bulu tangkis.
-            </p>
+                Selain melatih kemampuan teknik, CBS juga menanamkan nilai sportivitas, kerja sama tim, dan tanggung jawab.
+                Anggota didorong untuk berkembang sesuai kemampuan masing-masing tanpa tekanan kompetisi berlebihan.
+            </p><div class="stats">
+            <div class="stat-box">
+                <h3>30+</h3>
+                <span>Anggota Aktif</span>
+            </div>
+            <div class="stat-box">
+                <h3>1–2x</h3>
+                <span>Latihan / Minggu</span>
+            </div>
         </div>
+    </div>
 
-        <div class="box">
-            <h2>Visi</h2>
-            <p>
-                Visi CBS adalah menciptakan generasi muda yang unggul dalam olahraga bulu tangkis melalui program pelatihan yang berkualitas. 
-                Kami berupaya membentuk karakter yang percaya diri, disiplin, dan mampu bersaing secara sehat. 
-                Selain fokus pada teknik bermain, CBS juga menanamkan nilai kebersamaan dan sportivitas. 
-                Dengan demikian, siswa dapat berkembang menjadi atlet sekaligus pribadi yang berintegritas.
-            </p>
+    <div class="box">
+        <h2>Visi</h2>
+        <p>
+            Visi CBS adalah menjadi ekstrakurikuler bulu tangkis yang mampu menampung dan mengembangkan potensi siswa di bidang olahraga secara optimal. Kami ingin menciptakan lingkungan latihan yang positif, nyaman, dan mendukung perkembangan setiap anggota sesuai dengan kemampuannya masing-masing.
+        </p>
+        <p>
+            CBS juga memiliki visi untuk membentuk siswa yang tidak hanya terampil secara teknik, tetapi juga memiliki sikap disiplin, sportif, dan percaya diri. Nilai-nilai tersebut diharapkan dapat diterapkan tidak hanya di lapangan, tetapi juga dalam kehidupan sehari-hari siswa.
+        </p>
+    </div>
+
+    <div class="box">
+        <h2>Misi</h2>
+        <p>
+            Misi CBS adalah menyelenggarakan kegiatan latihan bulu tangkis yang teratur, terarah, dan menyenangkan bagi seluruh anggota. Program latihan dirancang untuk membantu siswa memahami teknik dasar hingga pengembangan kemampuan bermain secara bertahap.
+        </p>
+        <p>
+            Selain itu, CBS berkomitmen untuk menciptakan suasana latihan yang mendukung perkembangan fisik dan mental siswa. Melalui latihan rutin, siswa dilatih untuk memiliki semangat pantang menyerah, kedisiplinan, serta rasa tanggung jawab terhadap diri sendiri dan tim.
+        </p>
+        <p>
+            CBS juga mendorong terjalinnya kebersamaan dan kerja sama antar anggota, sehingga tercipta hubungan yang harmonis dan saling mendukung. Dengan misi ini, diharapkan setiap anggota dapat berkembang secara maksimal dan merasa bangga menjadi bagian dari CBS.
+        </p>
+    
+
+    <div class="box">
+        <h2>Struktur Organisasi</h2>
+        <div class="org-chart">
+            <div class="org-level">
+                <div class="org-box utama">Pembina<br><strong>Pak Bayu</strong></div>
+            </div>
+            <div class="org-level">
+                <div class="org-box">Ketua<br><strong>Fahri – XI</strong></div>
+            </div>
+            <div class="org-level">
+                <div class="org-box">Wakil Ketua<br><strong>Ido – XI</strong></div>
+            </div>
+            <div class="org-level horizontal">
+                <div class="org-box">Bendahara<br><strong>Salwa – XI</strong></div>
+                <div class="org-box">Sekretaris<br><strong>Desti & Erina – XI</strong></div>
+            </div>
         </div>
+    </div>
 
-        <div class="box">
-            <h2>Misi</h2>
-            <p>
-                Misi CBS adalah menyediakan pelatihan bulu tangkis yang efektif dan menyenangkan bagi seluruh siswa. 
-                Kami menciptakan lingkungan yang mendukung perkembangan fisik, mental, dan kerja sama antar anggota. 
-                Program latihan dirancang untuk meningkatkan teknik, stamina, dan pemahaman strategi permainan. 
-                Selain itu, kami memberikan kesempatan kompetisi agar siswa dapat mengasah pengalaman dan rasa percaya diri.
-            </p>
+    <div class="box">
+        <h2>Dokumentasi</h2>
+        <p style="text-align:center;">Dokumentasi kegiatan latihan dan kebersamaan anggota CBS.</p>
+        <div class="gallery vertical">
+            <img src="https://i.ibb.co/jFHHSkz/IMG-20251125-WA0032.jpg" alt="Dokumentasi CBS 1">
+            <img src="https://i.ibb.co/h1smGV83/IMG-20251125-WA0033.jpg" alt="Dokumentasi CBS 2">
         </div>
+    </div>
 
-    </section>
+</section>
 
 </body>
 </html>
